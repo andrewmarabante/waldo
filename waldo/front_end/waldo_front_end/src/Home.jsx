@@ -1,13 +1,12 @@
 import { useState } from 'react'
 
-import './App.css'
 
-function App() {
+function Home() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>Working</div>
+    <div>Home</div>
   )
 }
 
-export default App
+export default Home
