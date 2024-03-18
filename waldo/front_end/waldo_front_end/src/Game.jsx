@@ -7,26 +7,42 @@ export default function Game(){
     const [menuOpen, setMenuOpen] = useState(false);
 
     const viewCircle = (e) => {
+
         const leftOffSet = e.target.offsetLeft;
         const topOffSet = e.target.offsetTop;
+
+        if(
+            menuOpen
+            &&e.clientX-leftOffSet === circlePosition.x
+            &&e.clientY-topOffSet === circlePosition.y
+            ){
+            setMenuOpen(false);
+        }else{
+            setMenuOpen(true);
+        }
+
         const xpos = e.clientX - leftOffSet;
         const ypos = e.clientY - topOffSet;
 
         setCirclePosition({ x: xpos, y: ypos });
-        setMenuOpen(true);
+
+        console.log('x: '+xpos)
+        console.log('y: '+ypos)
 
         const circle = document.getElementById('circle');
-        circle.style.width = '0px';
-        circle.style.height = '0px';
-        circle.style.left = xpos + 'px';
-        circle.style.top = ypos + 'px';
-      
-        setTimeout(() => {
-          circle.style.width = '70px';
-          circle.style.height = '70px';
-          circle.style.left = (xpos +leftOffSet - 35) + 'px';
-          circle.style.top = (ypos +topOffSet - 35) + 'px';
-        }, 10);
+
+
+
+        if(
+            menuOpen
+            &&e.clientX-leftOffSet === circlePosition.x
+            &&e.clientY-topOffSet === circlePosition.y
+            )   {
+            circle.style.display = 'none'
+          }else{circle.style.display = 'block'}
+
+        circle.style.left = (xpos +leftOffSet - 25) + 'px';
+        circle.style.top = (ypos +topOffSet - 25) + 'px';
     }
 
     const closeMenu = () => {

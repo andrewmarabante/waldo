@@ -1,14 +1,17 @@
 #waldoSnowPic{
     position: relative;
     display: inline-block;
+    user-select: none;
 }
 
 #circle{
+    display: none;
     position: absolute;
     border: 2px solid black;
     border-radius: 50%;
-    width: 0;
-    height: 0;
-    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+    width: 50px;
+    height: 50px;
+    transition: width 1s, height 1s, top 1s, left 1s;
     pointer-events: none;
+    user-select: none;
 }

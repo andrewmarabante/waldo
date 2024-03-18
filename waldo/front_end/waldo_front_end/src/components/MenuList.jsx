@@ -23,9 +23,10 @@ export default function MenuListComposition({ circle, open, onClose }) {
       {open && (
         <div id="composition-menu" style={menuStyle}>
           <MenuList autoFocusItem={open} onKeyDown={(event) => event.stopPropagation()} style={{ fontSize: '14px' }}>
-            <MenuItem onClick={handleClose}>Waldo</MenuItem>
-            <MenuItem onClick={handleClose}>Oldwin</MenuItem>
-            <MenuItem onClick={handleClose}>Wizard</MenuItem>
+            <MenuItem onClick={handleClose} style={{fontSize:'10px', borderRadius:'10px'}}>Waldo</MenuItem>
+            <MenuItem onClick={handleClose} style={{fontSize:'10px', borderRadius:'10px'}}>Odlaw</MenuItem>
+            <MenuItem onClick={handleClose} style={{fontSize:'10px', borderRadius:'10px'}}>Wenda</MenuItem>
+            <MenuItem onClick={handleClose} style={{fontSize:'10px', borderRadius:'10px'}}>Wizard</MenuItem>
           </MenuList>
         </div>
       )}
