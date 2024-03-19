@@ -1,8 +1,9 @@
 import './styles/Game.css'
 import MenuListComposition from './components/MenuList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 import Button from '@mui/material/Button';
+import { v4 } from 'uuid';
 
 export default function Game(){
     const [circlePosition, setCirclePosition] = useState({ x: null, y: null });
@@ -13,11 +14,16 @@ export default function Game(){
     const [wenda, setWenda] = useState(false);
     const [odlaw, setOdlaw] = useState(false);
     const [wizard, setWizard] = useState(false);
+    const [game, setGame] = useState(false)
     const [incorrect, setIncorrect] = useState(false);
     const [correct, setCorrect] = useState(false);
     const [chooseMessage, setChooseMessage] = useState(false);
 
     const viewCircle = (e) => {
+        const params = new URLSearchParams(window.location.search);
+        const gameId = params.get('gameId')
+        console.log(gameId)
+
 
         const leftOffSet = e.target.offsetLeft;
         const topOffSet = e.target.offsetTop;
@@ -27,7 +33,7 @@ export default function Game(){
 
         if(
             menuOpen
-            &&e.clientX-leftOffSet === circlePosition.x
+            &&e.clientX + window.scrollX -leftOffSet === circlePosition.x
             &&e.clientY + window.scrollY - topOffSet === circlePosition.y
             ){
             setMenuOpen(false);
@@ -37,7 +43,7 @@ export default function Game(){
         }
 
 
-        const xpos = e.clientX - leftOffSet;
+        const xpos = e.clientX + window.scrollX - leftOffSet;
         const ypos = e.clientY + window.scrollY - topOffSet;
 
         const leftRatio = xpos/e.target.width;
@@ -54,7 +60,7 @@ export default function Game(){
 
         if(
             menuOpen
-            &&e.clientX-leftOffSet === circlePosition.x
+            &&e.clientX + window.scrollX -leftOffSet === circlePosition.x
             &&e.clientY + window.scrollY - topOffSet === circlePosition.y
             )   {
             circle.style.display = 'none'
@@ -113,14 +119,24 @@ export default function Game(){
         setMenuOpen(false);
     }
 
+    useEffect( () => {
+        if(waldo && wenda && odlaw && wizard)
+    {
+        if(!game){
+            console.log('working')
+        }
+        setGame(true)
+    }},[isCorrect] )
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target)
+        console.log(e.target.username.value)
+
     }
 
     return(
         <div>
-            {(waldo && wenda && odlaw && wizard) && 
+            {game && 
             <div className='game'>
                 <h1>You Win!</h1>
                 <form onSubmit={handleSubmit}>

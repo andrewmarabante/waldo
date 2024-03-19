@@ -22,6 +22,20 @@ function checkLocation(req,res){
     .catch((err)=> err)
 }
 
+function startGame(req,res){
+    const currentDate = new Date();
+    gameDetails = {
+        start: currentDate
+    }
+
+    const newGame = new Game(gameDetails)
+    newGame.save()
+    .then( result => {
+        res.status(200).json(result._id)})
+    .catch((err)=>{res.status(500).json()})
+}
+
 module.exports = {
-    checkLocation
+    checkLocation,
+    startGame
 }

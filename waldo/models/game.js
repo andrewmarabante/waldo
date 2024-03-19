@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 const gameSchema = new Schema({
     username: {
         type: String,
-        required: true
     },
     start: {
         type: Date,
@@ -12,7 +11,6 @@ const gameSchema = new Schema({
     },
     end: {
         type: Date,
-        required: true
     }
 }, {timestamps:true})
 
