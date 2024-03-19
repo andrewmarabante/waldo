@@ -22,3 +22,32 @@
     justify-content:'center'; 
     align-items:'center'
 }
+
+.message{
+    min-height: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 20PX;
+}
+
+.game{
+    background-color: rgb(219, 237, 243);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    min-height: 50%;
+    min-width: 50%;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 2px blue;
+    font-size: 2em;
+}
+
+#subButton{
+    margin-top: 15px;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
