@@ -153,7 +153,9 @@ export default function Game(){
             credentials: 'include'  
            })
            .then(result => result.json())
-           .then(data => console.log(data))
+           .then(data => {
+            window.location.href = '/scores'
+           })
            .catch(err=>console.log(err))
         }
 

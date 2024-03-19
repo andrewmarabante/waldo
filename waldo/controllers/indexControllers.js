@@ -39,7 +39,7 @@ function endGame(req,res){
     const id = req.body.gameId
     const currentDate = new Date()
     Game.findByIdAndUpdate(id, { end: currentDate})
-    .then(res.status(200).json('updated'))
+    .then(res.status(200).json('Updated Endtime'))
     .catch(err => res.status(500).json(err))
 }
 
@@ -47,13 +47,20 @@ function updateUsername(req,res){
     const id = req.body.gameId;
     const username = req.body.username;
     Game.findByIdAndUpdate(id, { username: username })
-    .then(res.status(200).json())
+    .then(res.status(200).json('Updated Username'))
     .catch(err  => res.status(500).json(err))
+}
+
+function getScores(req, res){
+    Game.find({ username : {$ne : undefined}})
+    .then(result => {res.json(result)})
+    .catch(err => res.json(err))
 }
 
 module.exports = {
     checkLocation,
     startGame,
     endGame,
-    updateUsername
+    updateUsername,
+    getScores
 }

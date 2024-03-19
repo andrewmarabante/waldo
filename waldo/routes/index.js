@@ -11,4 +11,6 @@ router.put('/', indexControllers.endGame)
 
 router.put('/username', indexControllers.updateUsername)
 
+router.get('/', indexControllers.getScores)
+
 module.exports = router;
