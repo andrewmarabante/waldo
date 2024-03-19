@@ -35,7 +35,25 @@ function startGame(req,res){
     .catch((err)=>{res.status(500).json()})
 }
 
+function endGame(req,res){
+    const id = req.body.gameId
+    const currentDate = new Date()
+    Game.findByIdAndUpdate(id, { end: currentDate})
+    .then(res.status(200).json('updated'))
+    .catch(err => res.status(500).json(err))
+}
+
+function updateUsername(req,res){
+    const id = req.body.gameId;
+    const username = req.body.username;
+    Game.findByIdAndUpdate(id, { username: username })
+    .then(res.status(200).json())
+    .catch(err  => res.status(500).json(err))
+}
+
 module.exports = {
     checkLocation,
-    startGame
+    startGame,
+    endGame,
+    updateUsername
 }

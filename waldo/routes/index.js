@@ -7,4 +7,8 @@ router.post('/check', indexControllers.checkLocation);
 
 router.post('/', indexControllers.startGame)
 
+router.put('/', indexControllers.endGame)
+
+router.put('/username', indexControllers.updateUsername)
+
 module.exports = router;

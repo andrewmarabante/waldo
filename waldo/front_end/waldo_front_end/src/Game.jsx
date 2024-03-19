@@ -18,13 +18,10 @@ export default function Game(){
     const [incorrect, setIncorrect] = useState(false);
     const [correct, setCorrect] = useState(false);
     const [chooseMessage, setChooseMessage] = useState(false);
+    const params = new URLSearchParams(window.location.search);
+    const gameId = params.get('gameId');
 
     const viewCircle = (e) => {
-        const params = new URLSearchParams(window.location.search);
-        const gameId = params.get('gameId')
-        console.log(gameId)
-
-
         const leftOffSet = e.target.offsetLeft;
         const topOffSet = e.target.offsetTop;
         setIncorrect(false);
@@ -123,16 +120,42 @@ export default function Game(){
         if(waldo && wenda && odlaw && wizard)
     {
         if(!game){
-            console.log('working')
+            const data = {
+                gameId : gameId,
+            }
+            fetch('http://localhost:3000/', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            credentials: 'include'  
+           })
+           .then(result => result.json())
+           .then(data => console.log(data))
+           .catch(err=>console.log(err))
         }
         setGame(true)
     }},[isCorrect] )
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target.username.value)
-
-    }
+        const data = {
+            gameId : gameId,
+            username : e.target.username.value
+        }
+        fetch('http://localhost:3000/username', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            credentials: 'include'  
+           })
+           .then(result => result.json())
+           .then(data => console.log(data))
+           .catch(err=>console.log(err))
+        }
 
     return(
         <div>
