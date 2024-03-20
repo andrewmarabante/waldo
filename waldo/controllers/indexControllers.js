@@ -53,7 +53,18 @@ function updateUsername(req,res){
 
 function getScores(req, res){
     Game.find({ username : {$ne : undefined}})
-    .then(result => {res.json(result)})
+    .then((games) => {
+        games.forEach((game) => {
+            if(game.start && game.end){
+                duration = game.end.getTime() - game.start.getTime()
+                game.duration = duration
+            }else{game.duration = null}
+        })
+
+        games.sort((a, b) => a.duration - b.duration);
+        const top5 = games.slice(0,5);
+        res.status(200).json(top5);
+    })
     .catch(err => res.json(err))
 }
 

@@ -1,0 +1,35 @@
+.mainContainer{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    height: 100vh;
+}
+
+.title{
+    margin: 30px;
+    font-size: 3em;
+}
+
+.score{
+    font-size: 1em;
+}
+
+.name{
+    font-size: 1.5em;
+}
+
+.date{
+    font-size: .75em;
+}
+
+.scoreContainer{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
