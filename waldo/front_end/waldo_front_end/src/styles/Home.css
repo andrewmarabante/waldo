@@ -1,0 +1,10 @@
+.characterPic{
+    height: 200px;
+    width: auto;
+    transition: all 1s ease;
+}
+
+.imageContainer{
+    display: flex;
+    justify-content: space-around;
+}
