@@ -176,7 +176,7 @@ export default function Game(){
 
 
             <h1 style={{textAlign:'center'}}>Where's Waldo?</h1>
-            <img id='waldoSnowPic' src="public/waldo_snow.jpeg" alt="waldo_pic" width={'100%'} height={"auto"} onClick={viewCircle}/>
+            <img id='waldoSnowPic' src="/static/images/waldo_snow.jpeg" alt="waldo_pic" width={'100%'} height={"auto"} onClick={viewCircle}/>
             <div id='circle'></div>
             <MenuListComposition circle={circlePosition} open={menuOpen} onClose={closeMenu}></MenuListComposition>
             {correct && <div className='message'>Found Him!</div>}
