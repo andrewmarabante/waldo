@@ -22,10 +22,10 @@ const handleClick = () => {
     <div>
       <h1 style={{textAlign:'center', fontSize:'50px', boxShadow:'0px 0px 5px 2px', padding:'20px'}}>Where's Waldo?</h1>
       <div className='imageContainer'>
-        <img className='characterPic' src="/public/Waldo.png" alt="Waldo"/>
-        <img className='characterPic' src="/public/Odlaw.png" alt="Waldo"/>
-        <img className='characterPic' src="/public/Wenda.png" alt="Waldo"/>
-        <img className='characterPic' src="/public/Wizard.png" alt="Waldo"/>
+        <img className='characterPic' src="../public/Waldo.png" alt="Waldo"/>
+        <img className='characterPic' src="../public/Odlaw.png" alt="Odlaw"/>
+        <img className='characterPic' src="../public/Wenda.png" alt="Wenda"/>
+        <img className='characterPic' src="../public/Wizard.png" alt="Wizard"/>
       </div>
       <Button onClick={handleClick} style={{width:'100%', padding:'20px', fontSize:'25px'}}>Start Game</Button>
     </div>
