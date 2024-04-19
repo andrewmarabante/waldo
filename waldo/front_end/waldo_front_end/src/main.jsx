@@ -17,11 +17,11 @@ const router = createBrowserRouter([
 
   },
   {
-    path: "game",
+    path: "/game",
     element: <Game />,
   },
   {
-    path: "scores",
+    path: "/scores",
     element: <Scores />
   }
 ]);
