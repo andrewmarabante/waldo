@@ -186,22 +186,22 @@ export default function Game(){
             <div style={{display:'flex', justifyContent:'space-around', alignItems:'center'}}>
                 
                 <div className='characterContainer'>
-                    <img src="/public/Waldo.png" alt="waldo" height={'100px'} width={'auto'}/>
+                    <img src="/static/images/Waldo.png" alt="waldo" height={'100px'} width={'auto'}/>
                     {waldo && <DoneOutlineIcon style={{position:'absolute'}}></DoneOutlineIcon>}
                 </div>
 
                 <div className='characterContainer'>
-                    <img src="/public/Wenda.png" alt="Wenda" height={'100px'} width={'auto'}/>
+                    <img src="/static/images/Wenda.png" alt="Wenda" height={'100px'} width={'auto'}/>
                     {wenda &&<DoneOutlineIcon style={{position:'absolute'}}></DoneOutlineIcon>}
                 </div>
               
                 <div className='characterContainer'>
-                    <img src="/public/Odlaw.png" alt="Odlaw" height={'100px'} width={'auto'}/>
+                    <img src="/static/images/Odlaw.png" alt="Odlaw" height={'100px'} width={'auto'}/>
                     {odlaw && <DoneOutlineIcon style={{position:'absolute'}}></DoneOutlineIcon>}
                 </div>
 
                 <div className='characterContainer'>
-                    <img src="/public/Wizard.png" alt="Wizard" height={'100px'} width={'auto'}/>
+                    <img src="/static/images/Wizard.png" alt="Wizard" height={'100px'} width={'auto'}/>
                     {wizard && <DoneOutlineIcon style={{position:'absolute'}}></DoneOutlineIcon>}
                 </div>
             </div>
