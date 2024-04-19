@@ -11,7 +11,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
-const allowedOrigins = ['http://localhost:5174', 'http://localhost:3000']; 
+const allowedOrigins = ['https://waldo-lemon.vercel.app']; 
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin)) {
@@ -36,7 +36,7 @@ mongoose.connect(process.env.uri)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
