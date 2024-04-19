@@ -7,7 +7,7 @@ function Home() {
 
 const handleClick = () => {
 
-   fetch('http://localhost:3000/', {
+   fetch('https://waldo-backend.fly.dev/', {
     method: 'POST',
    })
    .then((result) => result.json())

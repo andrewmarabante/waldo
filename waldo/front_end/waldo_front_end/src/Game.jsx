@@ -75,7 +75,7 @@ export default function Game(){
             top : topRatio
         }
 
-        fetch('http://localhost:3000/check', {
+        fetch('https://waldo-backend.fly.dev/check', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -123,7 +123,7 @@ export default function Game(){
             const data = {
                 gameId : gameId,
             }
-            fetch('http://localhost:3000/', {
+            fetch('https://waldo-backend.fly.dev/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -144,7 +144,7 @@ export default function Game(){
             gameId : gameId,
             username : e.target.username.value
         }
-        fetch('http://localhost:3000/username', {
+        fetch('https://waldo-backend.fly.dev/username', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
