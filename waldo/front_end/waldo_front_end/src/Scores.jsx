@@ -8,7 +8,7 @@ export default function Scores(){
 
     useEffect(() => {
         
-        fetch('http://localhost:3000/', {
+        fetch('https://waldo-backend.fly.dev/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
